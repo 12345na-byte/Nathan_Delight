@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-decoration: none;
+        }
+        body{
+            background-image: url(images/IMG-20251106-WA0008.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        #foreground{
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100vw;
+            height: 400px;
+            position: absolute;
+            z-index: 300;
+        }
+        header{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(5, 0, 28),
+                rgb(113, 126, 182, 0.771));
+                width: 100%;
+            height: 230px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            z-index: 1500;
+        }
+        img.logo{
+            width: 110px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+     header h2{
+        color: gold;
+        font-size: 25px;
+        margin-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     }
+     #contentbox{
+        background-color: rgba(255, 255, 255, 0.6);
+        width: 86%;
+        height: 400px;
+        margin-left: 7%;
+        position: relative;
+        z-index: 1000;
+     }
+     header nav{
+        color: white;
+        position: relative;
+        left: 10%;
+        width: 60%;
+      /*  background-color: red; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+     }
+     nav button{
+        width: 120px;
+        height: 40px;
+        padding: 8px 12px;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+    }
+    header nav .links{
+        margin-right: 14px;
+        font-size: 18px;
+        cursor: pointer;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     }
+     header a:link{
+        color: white;
+     }
+     header a:hover{
+        color: gold;
+     }
+   /* PSEUDO CLASSES
+     :link :hover :active :visited */
+     #contentbox .cards{
+        width: 250px;
+        height: 300px;
+        background-color: white;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 40px 30px;
+     }
+    section.menu{
+      width: 100%;
+       padding-top: 40px;
+       background-color: rgba(0, 0, 0, 0.9) ;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       color: white;
+    } 
+    section.menu h2 {
+      color: white;
+    }
+    section.menu p{
+      text-align: center;
+      margin: 5px 3px 5px 3px;
+    }
+    section.menu .menu-box{
+      width: 100%;
+      height: 400px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+      .menu-box .cards{
+         width: 22%;
+         height: 300px;
+         background-color: black;
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         position: relative;
+         box-shadow: 3px 5px 7px rgba(133, 126, 182, 0.7);
+         overflow: hidden;
+         visibility: hidden;
+         opacity: 0;
+         transform: translate(100%);
+                    
+/* animation: name duration timing-function delay iteration-count direction fill-mode;*/
+                /*Name timeDuration timing-function direction */    
+         animation: slideUp 2s ease forwards;
+         animation-delay: 2s;
+      }
+      .menu-box .cards:nth-child(1){
+         animation-delay: 0.6s;
+      }
+      .menu-box .cards:nth-child(2){
+         animation-delay: 1.6s;
+      }
+      .menu-box .cards:nth-child(3){
+         animation-delay: 2.6s;
+      }
+      .menu-box .cards:nth-child(4){
+         animation-delay: 3.6s;
+      }
+      @keyframes slideUp{
+          0%{
+            transform: translateY(100%);
+            opacity: 0;
+            visibility: visible;
+          }
+          100%{
+            transform: translateY(0%);
+            opacity: 1;
+            visibility: visible;
+          }
+      }
+      swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    img.snacks_slide{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    img.menu_img{
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      box-shadow: 3px 5px 7px rgba(133, 126, 182, 0.7);  
+      border: 3px solid rgba(133, 126, 182, 0.7);
+      
+      position: relative;
+      /* right: 0; */
+     /* visibility: hidden; */
+      opacity: 0;
+      overflow: hidden;
+      transform: translatex(100%);
+      animation: imgSlide 2s ease forwards;
+      animation-delay: 4.6s;
+    }
+      @keyframes imgSlide{
+         0%{
+            opacity: 0;
+            transform: translatex(100%);
+            visibility: visible;
+         }
+         100%{
+            opacity: 1;
+            transform: translatex(0);
+            visibility: visible;
+         }
+      }
+    .img-caption{
+        position: relative;
+        text-align: center;
+        width: 100%;
+        z-index: 500;
+    }
+    .caption{
+        text-align: center;
+        width: 100%;
+        z-index: 500;
+        color: white;
+        position: relative;
+        top: -150px;
+    }
+    .caption p{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .swipe-foreground{
+        position: absolute;
+        width: 100%;
+        height: 400px;
+        background-color: rgb(0,0,0,0.6);
+    }
+    section.about{
+        background-color: black;
+        width: 100vw;
+       height: 500px; 
+        display: flex;
+        padding-top: 100px;
+        justify-content: space-around; 
+        align-items: center;
+        margin-bottom: 5px;
+    }
+      section.about p{
+         color: white;
+         text-align: justify;
+         line-height: 1.0em;
+         margin-bottom: 10px;
+         margin-top: 15px;
+      }
+      section.toppings{
+         width: 100%;
+         display: flex;
+         height: 500px;
+         justify-content: center;
+         align-items: center;
+         flex-direction: row;
+         background-image: linear-gradient(to bottom, rgb(0,0,0, 0.7),rgba(5, 0, 28, 0.9),rgba(133, 126, 182, 0.8));
+      }
+      section.toppings .cards{
+         width: 25%;
+         height: 430px;
+         background-color: white;
+         margin: 0px 20px 0px 20px;
+         padding-top: 5px;
+      }
+     section.toppings .cards img{
+          width: 97%;
+          margin-left: 1.5%;
+          height: 320px;
+          object-fit: cover;
+     }
+     section.toppings .cards h3{
+      text-align: center;
+     }
+     section.toppings .cards p{
+      text-align: center;
+     }
+      section.about button{
+         background: linear-gradient(rgb(5, 0, 28),rgb(113, 126, 182, 0.771));
+        width: 150px;
+        height: 38px;
+         color: white;
+         border: 0px;
+         border-radius: 5px;
+         font-weight: bold;
+         margin-top: 15px;
+      }
+      section.about .img-wrapper{
+        width: 10%;
+      }
+      section.about h2{
+         color: white;
+      }
+     
+      
+      .about-img{
+         width: 380px;
+        height: 380px;
+        margin: 20px 0 20px 40px;
+      }
+      .img_top{
+         opacity: 0.7;
+        width: 100px;
+        height: 150px;
+        position: relative;
+        top: -200px;
+         left: -190px;
+      }
+      section.about article{
+        width: 50%;
+        height: 300px;
+      }
+      section.testimonials{
+         background-color: black;
+         width: 100%;
+         height: 500px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         color: white;
+      }
+        section.testimonials h2{
+         text-align: center;
+         margin-bottom: 80px;
+         position: relative;
+         top: -80px;
+        }
+      section.testimonials .cards{
+           width: 30%;
+           height: 200px;
+           background-color: rgba(133, 126, 182);
+           background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(5, 0, 28),
+                rgb(113, 126, 182, 0.771));
+          /* margin-left: 35%; */
+           color: white;
+           position: relative;
+           border: 2px solid rgb(113, 126, 182);
+           border-radius: 10px;
+           padding: 20px;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      section.testimonials h4{
+         text-align: center;
+      }
+      section.testimonials .cards::before{
+         content: "";
+         position: absolute;
+         top: -10px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 0;
+         height: 0;
+         border-left: 15px solid transparent;
+         border-right: 15px solid transparent;
+         border-bottom: 15px solid rgba(133, 126, 182);
+         z-index: 1;
+        /* background-color: rgba(133, 126, 182, 0.7);   */
+      }
+      section.testimonials .user-img{
+         width: 80px;
+         height: 80px;
+         border-radius: 50%;
+         object-fit: cover;
+         position: absolute;
+         top: -94px;
+         left: 50%;
+         transform: translateX(-50%);
+         border: 4px solid rgba(133, 126, 182);
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         z-index: 2;
+
+      }
+       swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    section.newsletter{
+      width: 100%;
+      height: 300px;
+      background-image: url(images/IMG-20251106-WA0010.jpg);
+      z-index: -100;
+    }
+    section.newsletter .foreground{
+      width: 100%;
+      height: 300px;
+    }
+    .inspired{
+      width: 100%;
+      padding: 20px;
+      background-color: black;
+      border: 3px solid grey;
+      border-width: 90px;
+    }
+    .inspired h2{
+      color: white;
+      text-align: center;
+    }
+    .inspired .inspiredblock img{
+      width: 300px;
+      height: 280px;
+      margin-top: 25px;
+    }
+    .inspired .inspiredblock{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 5px;
+      row-gap: 5px;
+      align-items: center;
+      margin-left: 5%;
+      justify-content: center;
+      justify-items: center;
+    } 
+     .inspired .inspiredblock img{
+      width: 110%;
+      height: 100%;
+      margin-right: 80px;
+     }
+     footer{
+        background-color: black;
+        padding: 25px;
+     }
+     footer .block1{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+     }
+     footer .block1 .brand-img img{
+        width: 150px;
+        height: 120px;
+     }
+     .block1 ul{
+        list-style: none;
+     }
+     footer .block2{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        margin-top: 30px;
+     }
+     footer.block2 .social i{
+        margin: 10px;
+     }
+     footer .block2 .partner h2{
+        text-align: center;
+     }
+     footer .block2 .partner img{
+        width: 160px;
+        height: 60px;
+     
+     }
+     footer .block2 .qr-code img{
+        width: 150px;
+        height: 120px;
+     }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="HTML_pic/junk_  (1).jpg" class="logo">
+        </div>
+        <nav>
+             <span class="links"><a href="#">Home</a></span>
+             <span class="links"><a href="#">About Us</a></span>
+             <span class="links"><a href="#">Menu</a></span>
+             <span class="links"><a href="#">Testimonials</a></span>
+             <span class="links"><a href="#">Contact Us</a></span>
+             <span class="links"><a href="#">F.A.Q</a></span>
+             <button>Buy Now &rarr;</button>
+        </nav>
+       
+        <span class=""></span>
+    </header>
+    <div id="foreground">
+    <div id="contentbox">
+        <swiper-container class="mySwiper" navigation="true">
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (2).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (3).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Shawarma & Coke</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (4).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Shawarma on the Go</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (5).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream & Shawarma</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (6).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (7).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (8).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (9).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+    <swiper-slide><div class="img_caption">
+        <div class="swipe-foreground"></div>
+     <img class="snacks_slide" src="HTML_pic/junk_  (10).jpg" alt="ice cream">
+     <div class="caption">
+        <h2 class="caption_text">Delicious Ice Cream</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat nesciunt magnam, maxime optio quos sit placeat voluptas tenetur neque.</p>
+     </div>
+  </div></swiper-slide>
+  </swiper-container>
+  </div>
+    
+       <section class="about">
+         <div class="img-wrapper">
+             <img src="HTML_pic/junk_  (11).jpg" class="about-img">
+             <img src="HTML_pic/junk_  (12).jpg" class="img_top">
+         </div>
+     
+     <article>
+        <h2>ABOUT US</h2>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br>Ea fugiat magnam modi, voluptatibus
+             quam autem nesciunt? <br>Necessitatibus animi reiciendis atque reprehenderit officiis,<br> laudantium quia quod consectetur ratione 
+             fugit minima enim,<br> voluptates vel. Quisquam ratione sapiente
+             omnis placeat ea <br>rem. Rem unde culpa deleniti repudiandae voluptates eligendi<br> nemo facilis odio error.</p>
+         <button>READ MORE &rarr;</button>
+            </article>
+   </section>
+   <section class="toppings">
+      <div class="cards">
+         <img class="product_img" src="HTML_pic/junk_  (13).jpg">
+         <h3>Product Name</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tempora adipisci dolorem
+             aut dolores veritatis.</p>
+      </div>
+      <div class="cards">
+         <img class="product_img" src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.25_cbbdd8d5.jpg">
+         <h3>Product Name</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tempora adipisci dolorem
+             aut dolores veritatis.</p>
+      </div>
+      <div class="cards">
+         <img class="product_img" src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.24_e02686c6.jpg">
+         <h3>Product Name</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tempora adipisci dolorem
+             aut dolores veritatis.</p>
+      </div>
+   </section>
+
+      <section class="menu">
+         <h2>Our Menu</h2>
+           <div class="menu-box">
+          <div class="cards">
+             <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.24_1e89f372.jpg" class="menu_img">
+              <h3>Product Category</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                iure accusantium ipsa, laudantium soluta aspernatur odit
+                 natus illum magni explicabo!</p>
+          </div> 
+          <div class="cards">
+             <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.23_9bdc6a55.jpg" class="menu_img">
+              <h3>Product Category</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                iure accusantium ipsa, laudantium soluta aspernatur odit
+                 natus illum magni explicabo!</p>
+          </div> 
+          <div class="cards">
+             <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.22_5aa74cee.jpg" class="menu_img">
+              <h3>Product Category</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                iure accusantium ipsa, laudantium soluta aspernatur odit
+                 natus illum magni explicabo!</p>
+          </div> 
+          <div class="cards">
+             <img src="HTML_pic/background.jpg" class="menu_img">
+              <h3>Product Category</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                iure accusantium ipsa, laudantium soluta aspernatur odit
+                 natus illum magni explicabo!</p>
+          </div> 
+          </div>    
+      </section>
+     
+       
+       
+       <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <swiper-slide> 
+      <section class="testimonials">
+           <h2>Our Testimonials</h2>
+         <div class="cards">
+           <img src="imagecarbohydrate(6).jpg" class="user-img">
+            <h4 class="user-name">Amazing Shawarma</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque corporis totam repellendus, odio eius
+                aspernatur eaque cupiditate est omnis maiores qui eveniet 
+                voluptate dolorem accusamus placeat dolorum officia, earum sapiente.</p>
+            </div>
+      </section></swiper-slide>
+    <swiper-slide><section class="testimonials">
+           <h2>Our Testimonials</h2>
+         <div class="cards">
+           <img src="imagefatandoil.jpg" class="user-img">
+            <h4 class="user-name">Sandwiches Mix</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque corporis totam repellendus, odio eius
+                aspernatur eaque cupiditate est omnis maiores qui eveniet 
+                voluptate dolorem accusamus placeat dolorum officia, earum sapiente.</p>
+            </div>
+      </section></swiper-slide>
+    <swiper-slide><section class="testimonials">
+           <h2>Our Testimonials</h2>
+         <div class="cards">
+           <img src="imagewater (1).jpg" class="user-img">
+            <h4 class="user-name">Ball Ice-Cream</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque corporis totam repellendus, odio eius
+                aspernatur eaque cupiditate est omnis maiores qui eveniet 
+                voluptate dolorem accusamus placeat dolorum officia, earum sapiente.</p>
+            </div>
+      </section>
+</swiper-slide>
+  </swiper-container>
+
+  <section>
+   <div class="newsletterblock"></div>
+     
+  </section>
+  <section class="inspired">
+   <h2>GET INSPIRED</h2>
+   <div class="inspiredblock">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.25_cbbdd8d5.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.22_5aa74cee.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.22_c2d0ea2b.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.23_37c5387d.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.24_1e89f372.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.24_e02686c6.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.17_d71ee13f.jpg">
+      <img src="HTML_pic/WhatsApp Image 2025-09-30 at 10.13.21_1b3f028d.jpg">
+   </div>
+  </section>
+  <footer>
+    <div class="block1">
+        <div class="brand-img">
+            <img src="image/Snacks-removebg-preview.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Voluptatem voluptas vel debitis a, atque ut.</p>
+        </div>
+        <div class="extra-links">
+            <h2>Extra Links</h2>
+            <ul>
+                <li><a>Sitemap</a></li>
+                <li><a>Advertise With Us</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Explore</a></li>
+            </ul>
+        </div>
+        <div class="extra-links">
+            <h2>Extra Links</h2>
+            <ul>
+                <li><a>Our Service</a></li>
+                <li><a>Check Menu</a></li>
+                <li><a>FAQ</a></li>
+                <li><a>Review</a></li>
+            </ul>
+        </div>
+        <div class="extra-links">
+            <h2>Contact Us</h2>
+            <div class="contact-list"><i class="fa fa-phone"></i>+234907642432</div>
+            <div class="contact-list"><i class="fa fa-envelope"></i>info@snacks_kelly.com</div>
+            <div class="contact-list"><i class="i" class="fa fa-map-maker" aria-hidden="true"></i>10,Saint.Johns Street,Johannesburg</div>
+        </div>
+    </div>
+    <div class="block2">
+        <div class="socials">
+            <h2>CONNECT WITH US</h2>
+            <span class="social-icons"><i class="fa fa-facebook-square"></i></span>
+            <span class="social-icons"><i class="fa fa-youtube-play"></i></span>
+            <span class="social-icons"><i class="fa fa-google-plus"></i></span>
+            <span class="social-icons"><i class="fa fa-whatsapp"></i></span>
+        </div>
+        <div class="partner">
+            <h2>OUR PARTNER</h2>
+            <div class="partner-brand">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="qr-code">
+            <img src="" alt="">
+        </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    
+       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+</html>
