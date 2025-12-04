@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            background-color: #f7a0b5;
+            display: flex;
+            border-style: solid;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container{
+            display: flex;
+            width: 900px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0 ,0 ,0.2);
+        }
+
+        .left{
+            flex: 1;
+            background-color: #1f2b3a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+        .left h2{
+            font-size: 28px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+
+        .left p{
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .right{
+            flex: 1;
+            background-color: #e34170;
+            color: white;
+            padding: 40px;
+            position: relative;
+            width: 450px;
+        }
+
+        .btn-box{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .btn-box button{
+            border: none;
+            outline: none;
+            padding: 8px 20px;
+            margin-left: 5px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-box .login{
+            background-color: white;
+            color:#e34170;
+        }
+
+        .btn-box .signup{
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .right h2{
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 30px;
+        }
+
+        .input-box{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5px;
+        }
+        .input-box input{
+            padding: 0px;
+            border: none;
+            border-bottom: 1px solid white;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 14px;
+        }
+        .input-box label{
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .input-box input::placeholder{
+            color: rgba(255, 255 , 255, 0.7);
+        }
+
+        .submit-btn{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            background-color: white;
+            color: #e34170;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .submit-btn:hover{
+            background-color: #ffe1ec;
+        }
+        .login.text{
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .login.text a:hover{
+            text-decoration: underline;
+        }
+        .login.text a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+    <div class="left">
+    <h2>Welcome to Project World</h2>
+    <p>create account to make project</p>
+    <p>Signup and login</p>
+    </div>
+    
+    <div class="right">
+    <div class="btn-box">
+    <button class="login">Login</button>    
+    <button class="signup">signup</button> 
+    </div>
+    
+    <h2 style="text-align: center;">Sign Form</h2>
+    <form>
+        <div class="input-box">
+    <label>Enter your Name</label><br>
+    <input type="text" name="Username" placeholder="Enter your Name" required><br>
+    <label>Enter your Email</label><br>
+    <input type="email" name="email" placeholder="Enter your Email" required><br>
+    <label>Enter your password</label><br>
+    <input type="password" name="password" placeholder="Enter your Password" required><br>
+
+    </div>
+    <div class="input-box">
+    <button type="submit" class="submit-btn">Signup</button>
+    <p style="font-size: 12px;">If you have account<a href="LOGIN">LogIn</a> </p>
+    </form>
+</div>
+</body>
+</html>

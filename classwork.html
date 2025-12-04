@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 class="Log">LOGIN PAGE</h1>
+    <style>
+        input[type="text"]{
+            background-color: white;
+            color: black;
+            height: 30px;
+            width: 350px;
+            text-align: center;
+        }
+        .Log{
+            background-color: grey;
+            width: 350px;
+            height: 35px;
+            text-align: center;
+        }
+        input[type="text"]:focus{
+            background-color: black;
+            color: red;
+            transition: 0.15ms;
+        }
+        input[type="text"]:hover{
+            background-color: black;
+            opacity: 0.8;
+            color: red;
+        }
+        input[type="password"]{
+            background-color: white;
+            color: black;
+            height: 30px;
+            width: 350px;
+            text-align: center;
+        }
+        input[type="password"]:hover{
+            background-color: black;
+            opacity: 0.8;
+            color: red;
+        }
+        input[type="text"]:focus{
+            background-color: black;
+            color: red;
+            transition: 0.15ms;
+        }
+        input[type="submit"]{
+            background-color: darkblue;
+            color: lightblue;
+            text-align: center;
+            font-weight: bolder;
+        }
+        input[type="submit"]:hover{
+
+            background-color: lightblue;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Username" name="Username" required><br>
+        <input type="password" placeholder="password" name="password" required><br>
+        <input type="submit" placeholder="Log In" name="LOGIN"> 
+    </form>
+</body>
+</html>

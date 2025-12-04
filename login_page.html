@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(to right, rgb(188, 44, 169), rgb(242, 62, 167));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }.login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }.tab {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }.tab button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+
+    }
+    .active {
+      background: linear-gradient(to right, rgb(188, 44, 169), rgb(242, 62, 167));
+      color: white;
+      border-radius: 5px 5px 0 0;
+    }
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }.forgot {
+      font-size: 12px;
+      text-align: left;
+      margin-bottom: 10px;
+      color: #777;
+      cursor: pointer;
+    }.login-btn {
+      width: 100%;
+background:linear-gradient(to right, rgb(140, 16, 124), rgb(255, 12, 154));
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }.signup-text {
+      margin-top: 20px;
+      font-size: 14px;
+    }.signup-text a {
+      color: #d72f6f;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .active{
+         background:linear-gradient(to right, rgb(140, 16, 124), rgb(255, 12, 154));
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Login Form</h1>
+    <div class="tab">
+      <button class="active">Login</button>
+      <button>Signup</button>
+    </div>
+    <form>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      <div class="forgot">Forgot password?</div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="signup-text">
+      Not a member? <a href="#">Signup now</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px           box-sizing: border-box;
+            text-decoration: none;
+            border: 0px;
+        }
+        #content{
+            background-color: rgb(255, 164, 179);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+        }
+        #block1{
+            background-color: rgb(21, 21,23);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #block2{
+            background-color: rgb(223, 60, 87);
+            padding: 15px;
+        }
+        .signup{
+            width: 44%;
+            height: 600px;
+        }
+        #block1 h1,#block1 h4,#block1 p{
+            color: white;
+            margin-bottom: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: normal;
+        }
+        .button{
+            position: relative;
+            left: 70%;
+        }
+        .button .navigate{
+            padding: 8px 12px;
+            font-weight: normal;
+            font-size: 1.2em;
+            border-radius: 20px;
+        }
+        .button #sign{
+            background-color: inherit;
+            border: 1px solid rgb(240, 240, 240);
+        }
+        .button #sign:hover{
+            color: rgb(223, 60, 87);
+            background-color: black;
+            cursor: pointer;
+        }
+        .button #sign:active{
+            box-shadow: 4px 5px 10px rgba(0,0,0,0.3);
+        }
+        form{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 20px;
+        }
+        form h1{
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-weight: normal;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .fields{
+            width: 100%;
+            color: white;
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        input{
+            width: 100%;
+            height: 38px;
+        }
+        input[type="submit"]{
+            border-radius: 20px;
+            font-weight: bold;
+            position: relative;
+            top: -17;
+            cursor: pointer;
+        }
+        input[type="text"],input[type="email"],input[type="password"]{
+            background-color: inherit;
+            border-bottom: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="block1" class="signup">
+            <h1>Welcome to Project World</h1>
+            <h4>Create an account to make project</h4>
+            <p>Signup and Login</p>
+        </div>
+        <div id="block2" class="signup">
+            <div class="button">
+                <button id="log" class="navigate">Login</button>
+                <button id="sign" class="navigate">Sign-up</button>
+        </div>
+        <form>
+            <h1>Sign Form</h1>
+            <div id="form-block">
+            <div class="fields">
+                <label>Enter your Name</label><br><br>
+                <input type="text" name="name" placeholder="Enter your Name"><br>
+            </div>
+            <div class="fields">
+                <label>Enter your Email</label><br><br>
+                <input type="email" name="email" placeholder="Enter your Email">
+            </div>
+            <div class="fields">
+                <label>Enter your Password</label><br><br>
+                <input type="password" name="password" placeholder="Enter your password"><br>
+            </div><br>
+            <div class="fields">
+                <input type="submit" name="submit" value="Sign-up"><br>
+            </div>
+            <p style="color: white;">If you have account <a href="">Login</a></p></a>
+        </form>
+    </div>
+</body>
+</html>

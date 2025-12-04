@@ -1,0 +1,70 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+
+}
+main{
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+form{
+  width: 100%;
+  display: flex;
+  /*justify-content:center;
+  align-items: center;*/
+  flex-direction: column; /*column*/;
+}
+fieldset{
+}
+#personal{
+    /*background-color:rgb(235, 235, 235);*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#personal input[type="text"],#personal input[type="date"]{
+    width: 70%;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 15%;
+    margin-bottom: 5px;
+    font-size: 1.0em;
+    padding: 8px 12px;
+}
+.radio{
+    /*margin-left: 15%;*/
+}
+input[type="radio"]{
+    width: 25px;
+    height: 25px;
+}
+.fullname{
+    display: flex;
+    flex-direction: row;
+}
+.fullname input[type="text"]{
+    margin-left:10px;
+}
+.fullname input[type="text"]:nth-child(2){
+    width: 40%;
+    position: relative;
+    left: -178px;
+}
+textarea{
+    width: 70%;
+    height: 300px;
+    margin-left: 15%;
+    margin-top: 12px;
+}
+input[type="file"]{
+    margin-left: 40%;
+}
+label{
+    margin-left: 180px;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htmlclass6</title>
+    <style>
+        *{
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+        form{
+            width: 80%;
+        }
+        input{
+            
+            padding: 8px 12px;
+            border: 0.5px black solid;
+        }
+        input[type="text"]{
+            width: 250px;
+            height: 30px;
+            background-color: rgba(63, 71, 113, 0.492);
+        }
+        input[type="email"] {
+            background-color: rgba(120, 5, 8, 0.8);
+            color: white;
+            width: 250px;
+            height: 35px;
+        }
+    input[type="search"] {
+        width: 300px;
+        height: 35px;
+        border-radius: 15px 15px 15px 15px;
+        margin: 10px;
+    }
+    input[type="password"]{
+        font-size: 16px;
+        padding: 12px;
+        width: 400px;
+        height: auto;
+    }
+    input[type="number"],input[type="date"]{
+        width: 80%;
+        height: 35px;
+    }
+    input[type="radio"] {
+        width: 50px;
+        height: 20px;
+    }
+    input[type="checkbox"] {
+        width: 50px;
+        height: 30px;
+        color: black;
+    }
+    input[type="checkbox"]:checked{
+        width: 20px;
+        height: 30px;
+    }
+    input[type="radio"]:checked{
+        width: 30px;
+        height: 50px;
+    }
+    input[type="text"]:focus{
+        background-color: white;
+    }
+    select{
+        width: 70%;
+    }
+    option{
+        background-color: blueviolet;
+        font-size: 20px;
+        margin: 15px;
+    }
+    textarea{
+        width: 400px;
+        height: 250px;
+        border:1px solid black;
+    }
+    input[type="submit"] {
+        background-color: lawngreen;
+        color: black;
+        text-align: center;
+        font-weight: bolder;
+    }
+    input[type="submit"]:hover{
+        background-color: black;
+        color: lawngreen;
+    }
+    input[type="submit"]:focus{
+        background-color: red;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter your firstname" name="firstname" required><br>
+        <input type="text" placeholder="Enter your Lastname" value="NIIT Ikeja" disabled><br>
+        <input type="email" placeholder="Enter your Email" name="Email"><br>
+        <input type="Search" placeholder="Search" name="Search"><br>
+        <input type="password" placeholder="Input your Password" name="Password"><br>
+        <label>Your Age:</label><input type="number" placeholder="Enter your Age" name="age"><br>
+        <label>Your date of birth:</label><input type="date" name="date"><br>
+        <label>Your Gender:</label><br>
+        <label>Male</label><input type="radio" placeholder="Gender" value="Male" name="gender">
+        <label>Female</label><input type="radio" name="gender" value="Female" checked="checked"><br>
+        <label>Select your Hobbies</label><br>
+        <label>Reading</label><input type="checkbox" name="interest" value="reading"><br>
+        <label>Sleeping</label><input type="checkbox" name="interest" value="sleeping"><br>
+        <label>Coding</label><input type="checkbox" name="interest" value="coding"><br>
+        <label>Eating</label><input type="checkbox" name="interest" value="eating"><br>
+        <label>Dancing</label><input type="checkbox" name="interest" value="Dancing"><br>
+        <select name="department">
+            <option>Select Your Department</option>
+            <option value="software">Software Development</option>
+            <option value="networking">Networking</option>
+            <option value="hardware">Hardware</option>
+            <option value="cybersecurity">Cybersecurity</option>
+        </select><br>
+        <label>Upload a File:</label> <input type="file" name="file"><br>
+        <input type="submit" name="submit"><br>
+        <textarea name="post" rows="20" cols="100">Write a post.</textarea>
+    </form>
+</body>
+</html>

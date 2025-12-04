@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create An Account</title>
+    <link rel="stylesheet" href="create_an_account.css">
+</head>
+<body>
+    <main>
+        <form>
+        <fieldset id="personal">
+            <legend>Add Your Personal Details</legend>
+            <div><label>Enter Your Full Name:</label></div>
+            <div class="fullname">
+            <input type="text" name="firstname" placeholder="Enter Your First Name">
+            <input type="text" name="lastname" placeholder="Enter Your Last Name"><br>
+            </div>
+            <label>Enter Your Nationality:</label><br>
+            <input type="text" name="nationality" placeholder="Your Nationality"><br>
+            <label>Select Your D.O.B:</label><br>
+            <input type="date" name="age"><br>
+            <label>Enter Your Address</label><br>
+            <input type="text" name="address" placeholder="Enter Your Address"><br>
+            <label>Your Gender:</label><br>
+            <div class="radio">
+            <label class="title" style="position: relative; top: -10px;">Male</label><input type="radio" name="gender" value="male" checked="checked">
+            <label class="title" style="position: relative; top: -10px;">Female</label><input type="radio" name="gender" value="female">
+            </div>
+            <textarea name="bio">
+                Please Briefly Describe Yourself...    
+            </textarea>
+            <input type="file" name="file">
+        </fieldset>
+        <fieldset id="school">
+            <legend>Add Your School Details</legend>
+            <label>School Name:</label><br>
+            <input type="text" name="institution" placeholder="Enter Your School Name"><br>
+            <label>Your Faculty:</label><br>
+            <select name="faculty">
+            <option>Select Your Faculty</option>
+            <option value="engineering">Engineering</option>
+            <option value="medical science">Medical Science</option>
+            <option value="art">Art</option>
+            <option value="sport">Sport</option>
+            <option value="education">Education</option>
+            <option value="law">Law</option>
+            <option value="urban and regional planning">Urban and Regional Planning</option>
+            <option value="business administration">Business Administration</option>
+            </select>
+            <label>Year Of Admission:</label><br>
+            <input type="date" name="year_of_admission"><br>
+            <label>Programme</label><br>
+            <input type="text" name="programme" Placeholder="Enter Programme">
+        </fieldset>
+        <fieldset>
+            <legend>Your Signup Details</legend>
+            <label>Enter Your Username</label><br>
+            <input type="text" name="username" placeholder="Enter Your Username"><br>
+            <label>Enter Your Email</label><br>
+            <input type="email" name="email" placeholder="Enter Your Email"><br>
+            <label>Enter Your Password:</label><br>
+            <input type="password" name="password" placeholder="Enter Your Password"><br>
+            <label>Please Confirm Password!</label><br>
+            <input type="password" name="confirm_password" placeholder="Please Confirm Password!">
+            <br>
+            <input type="submit" name="submit" value="submit">
+            </ipnut>
+        </fieldset>
+        </form>
+    </main>
+</body>
+</html>
